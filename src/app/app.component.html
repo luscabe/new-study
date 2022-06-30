@@ -2,15 +2,7 @@
   <app-header></app-header>
 </div>
 <div class="content">
-  <div>
-    <button (click)="backPage()">back page</button>
-    <button (click)="nextPage()">next page</button>
-    <div class="wrapper">
-      <div *ngFor="let character of characters">
-        <character-card [character]="character"></character-card>
-      </div>
-    </div>
-  </div>
+  <page-template></page-template>
 </div>
 <div class="footer">
   <app-footer></app-footer>
