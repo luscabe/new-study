@@ -3,15 +3,11 @@
 </div>
 <div class="content">
   <div>
-    teste teste teste
-    <button (click)="testeAbc()">ae</button>
-    <div class="characters-wrapper">
-      <div *ngFor="let character of characters" class="character-card">
-        <img src="{{character['thumbnail']['path']}}.{{character['thumbnail']['extension']}}" width="200" height="325">
-        <div>
-          Name: {{character['name']}}
-          Id: {{character['id']}}
-        </div>
+    <button (click)="backPage()">back page</button>
+    <button (click)="nextPage()">next page</button>
+    <div class="wrapper">
+      <div *ngFor="let character of characters">
+        <character-card [character]="character"></character-card>
       </div>
     </div>
   </div>

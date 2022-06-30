@@ -25,11 +25,17 @@ export class AppComponent {
       this.characters = data.data.results
     )
   }
-
-  async testeAbc() {
+  async backPage() {
+    this.offset = this.offset - 20
     this.mainService.getOffsetCharacters(this.offset).subscribe(data => {
       this.characters = data.data.results
-      this.offset = this.offset + 20
+    })
+  }
+
+  async nextPage() {
+    this.offset = this.offset + 20
+    this.mainService.getOffsetCharacters(this.offset).subscribe(data => {
+      this.characters = data.data.results
     })
   }
 }
