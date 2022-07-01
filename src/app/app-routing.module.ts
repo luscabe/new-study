@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
+import { CharactersComponent } from './page/characters/characters.component';
+import { ProfileComponent } from './page/profile/profile.component';
+import { SearchComponent } from './page/search/search.component';
 
 const routes: Routes = [
-  {
-    path: '**',
-    redirectTo: 'error/not-found',
-  },
+  { path: '', component: CharactersComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'profile/:type/:id', component: ProfileComponent }
 ]
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      initialNavigation: 'enabledBlocking',
-      onSameUrlNavigation: 'reload',
-      relativeLinkResolution: 'legacy',
-    }),
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
 })
