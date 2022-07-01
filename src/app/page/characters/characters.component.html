@@ -1,0 +1,15 @@
+<section class="characters">
+  <div
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    [scrollWindow]="true"
+    (scrolled)="onScrollDown()"
+  >    
+    <div class="wrapper">
+      <div *ngFor="let character of characters.results">
+        <character-card [character]="character"></character-card>
+      </div>
+    </div>
+  </div>
+</section>
