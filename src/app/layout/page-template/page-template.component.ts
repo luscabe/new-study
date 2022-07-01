@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from 'src/service/main.service';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'page-template',

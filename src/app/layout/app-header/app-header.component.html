@@ -1,5 +1,39 @@
 <header class="header">
-    <div class="header__logo">
-        <img src="../../../assets/marvel.svg" alt="marvel-logo">
+    <div
+      *ngIf="router.url !== '/'"
+      class="header__btn" 
+      (click)="backToHome()"
+    >
+      <img src="../../../assets/back.svg" alt="">
     </div>
-</header>
+    <div class="header__logo">
+      <img src="../../../assets/marvel.svg" alt="marvel-logo">
+    </div>
+    <div class="header__btn" (click)="sidebarIsVisible = !sidebarIsVisible">
+      <img src="../../../assets/menu.svg" alt="">
+    </div>
+    <div>
+      <div *ngIf="sidebarIsVisible" class="header__navigation-background"></div>
+      <div 
+        class="header__navigation"
+        [ngClass]="{'header__navigation--visible': sidebarIsVisible}"
+      >
+        <div 
+          class="header__navigation__item"
+          [ngClass]="{'header__navigation__item--active': checkRouteIsActive('/')}"
+          (click)="goTo('/')"
+        >
+          <img src="../../../assets/characters.svg" alt="characeters-menu">
+          <div>Characters</div>
+        </div>
+        <div 
+          class="header__navigation__item"
+          [ngClass]="{'header__navigation__item--active': checkRouteIsActive('/search')}"
+          (click)="goTo('/search')"
+        >
+          <img src="../../../assets/search.svg" alt="characeters-menu">
+          <div>Search</div>
+        </div>
+      </div>
+    </div>
+  </header>
