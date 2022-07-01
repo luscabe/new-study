@@ -1,0 +1,42 @@
+<section class="profile">
+  <app-profile-header
+    [name]="name"
+    [description]="description"
+    [path]="path"
+    [extension]="extension"
+    [loading]="loading"
+    [comicsTotal]="comicsTotal"
+    [seriesTotal]="seriesTotal"
+    [storiesTotal]="storiesTotal"
+  ></app-profile-header> 
+  <app-options-menu
+    [options]="menuOptions" 
+    (onSelect)="onSelectMenu($event)"
+    [active]="searchType"
+  ></app-options-menu>
+  <div
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    [scrollWindow]="true"
+    (scrolled)="onScrollDown()"
+  >
+  <div class="characters__wrapper" *ngIf="searchType === 'comics'">
+    <div class="characters__element" *ngFor="let comic of comics.results">
+      <character-card [character]="comic"></character-card>
+    </div>
+  </div>
+  <div class="characters__wrapper" *ngIf="searchType === 'series'">
+    <div *ngFor="let serie of series.results">
+      <character-card [character]="serie"></character-card>
+    </div>
+  </div>
+</div>
+<div 
+  class="profile__data-not-found"
+  *ngIf="!loading && (comics.total === 0 || series.total === 0)"
+  >
+    <img [src]="getImageNotFound()">
+    <span>{{ name }} did not have any matches.</span>
+</div>
+</section>
