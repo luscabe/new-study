@@ -23,12 +23,12 @@
   >
   <div class="characters__wrapper" *ngIf="searchType === 'comics'">
     <div class="characters__element" *ngFor="let comic of comics.results">
-      <character-card [character]="comic"></character-card>
+      <media-card [media]="comic"></media-card>
     </div>
   </div>
   <div class="characters__wrapper" *ngIf="searchType === 'series'">
     <div *ngFor="let serie of series.results">
-      <character-card [character]="serie"></character-card>
+      <media-card [media]="serie"></media-card>
     </div>
   </div>
 </div>

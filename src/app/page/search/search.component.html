@@ -1,3 +1,58 @@
 <section class="search">
-  <div>search</div>
+  <div class="search__input">
+    <app-dropdown 
+      [label]="searchType"
+      [options]="dropdownOptions"
+      (onSelect)="onSelectSearchType($event)"
+    ></app-dropdown>
+    <input
+      type="text"
+      [value]="searchValue"
+      (change)="setSearchValue($event)"
+      (keyup.enter)="newSearch()"
+    >
+    <img src="../../../assets/search.svg" alt="search-logo">
+  </div>
+  <div class="search__results">
+    {{total}} Results
+  </div>
+  <div
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()"
+  >
+    <app-search-item
+      *ngFor="let item of characters.results" 
+      [id]="item.id"
+      [name]="item.name"
+      [image]="utilsService.getImage(item.thumbnail?.path || '', item.thumbnail?.extension || '')"
+      (onSelectItem)="onSelectItem($event)"
+    ></app-search-item>
+    <app-search-item
+      *ngFor="let item of creators.results" 
+      [id]="item.id"
+      [name]="item.fullName || item.firstName"
+      [image]="utilsService.getImage(item.thumbnail?.path || '', item.thumbnail?.extension || '')"
+      (onSelectItem)="onSelectItem($event)"
+    ></app-search-item>
+    <app-search-loading *ngIf="loading"></app-search-loading>
+  </div>
+  <div *ngIf="total === 0 && !firstRequest" class="search__not-found">
+    <h5>No results for {{ searchValue }}</h5>
+    <span>Try checking your spelling</span>
+  </div>
+  <div 
+    *ngIf="firstRequest"
+    class="search__suggestions"
+  >
+    <div>
+      <h5>Suggestions:</h5>
+      <ul>
+        <li class="search__suggestions-item">Lookings for a character or creator?</li>
+        <li class="search__suggestions-item">Try using a character name</li>
+        <li class="search__suggestions-item">Change the search type and try using a creator's name</li>
+      </ul>
+    </div>
+  </div>
 </section>
