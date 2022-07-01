@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ICharacter } from 'src/app/utils/Interfaces/IMarvelApi';
 
 @Component({
   selector: 'character-card',
@@ -7,13 +9,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CharacterCardComponent implements OnInit {
   @Input() character: any = {}
-  constructor() { }
+  constructor( 
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
   }
 
   getAvatarUrl() {
     return `${this.character.thumbnail.path}.${this.character.thumbnail.extension}`
+  }
+  onSelectItem = (item: ICharacter) => {
+    this.router.navigate([`/profile/characters/${item.id}`]);
   }
 
 }
