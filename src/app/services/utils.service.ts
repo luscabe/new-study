@@ -10,7 +10,7 @@ export class UtilsService {
   constructor() { }
 
   public getImage = (image: string, format: string) => {
-    if (this.imageNotAvailableUrl === `${image}.${format}` || this.gifNotAvailableUrl === `${image}.${format}`) return '../../../assets/not-found.jpeg';
+    if (this.imageNotAvailableUrl === `${image}.${format}` || this.gifNotAvailableUrl === `${image}.${format}`) return '../../../assets/not-found.jpg';
     return `${image}.${format}`;
   }
 

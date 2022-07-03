@@ -4,7 +4,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 @Component({
   selector: 'app-profile-header',
   templateUrl: './profile-header.component.html',
-  styleUrls: ['./profile-header.component.scss']
+  styleUrls: ['./profile-header.component.sass']
 })
 export class ProfileHeaderComponent {
   @Input() name: string = '';
