@@ -36,7 +36,5 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           args: deploy --only hosting
-        env: 
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
   
 
