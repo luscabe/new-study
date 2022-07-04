@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Deployment on Firebase Hosting
+
+This project was developed and deployed to firebase hosting, with use of GitHub Actions.
+You can see a live version [here](https://new-study-1f09b.firebaseapp.com/)
