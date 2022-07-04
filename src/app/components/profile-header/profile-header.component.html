@@ -1,5 +1,5 @@
 <div class="profile-header" *ngIf="!loading">
-  <img class="profile-header__box" [src]="utilsService.getImage(path, extension)" loading="eager" [alt]="name">
+  <img class="profile-header__box" [src]="utilsService.getImage(path, extension)" [alt]="name">
   <div class="profile-header__infos">
     <div class="profile-header__description" *ngIf="!loading && !isMobile">
       <h5>{{ name }}</h5>

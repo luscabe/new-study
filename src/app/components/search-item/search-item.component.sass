@@ -1,0 +1,30 @@
+.search-item
+    padding: 1rem
+    border-top: 1px solid var(--neutral-color-300)
+    display: flex
+    gap: 1rem
+    align-items: center
+    cursor: pointer
+    &:hover
+        background: #E0E6ED
+    &__box
+        border-width: 3px 4px 3px 5px
+        border-radius:95% 4% 92% 5%/4% 95% 6% 95%
+        transform: rotate(2deg) 
+    & > img
+        width: 4rem
+        min-width: 4rem
+        height: 4rem
+        border: solid black
+        border-color: black  
+        @media (min-width: 758px)
+            width: 6rem
+            min-width: 6rem
+            height: 6rem
+            border: solid black
+            border-color: black  
+          
+    & > span
+        font-size: .75rem
+        @media (min-width: 758px)
+            font-size: 1.25rem
