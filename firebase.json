@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "new-study-1f09b",
-    "public": "public",
+    "public": "dist/new-study",
     "ignore": [
       "firebase.json",
       "**/.*",
