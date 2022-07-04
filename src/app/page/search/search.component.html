@@ -36,7 +36,6 @@
       [image]="utilsService.getImage(item.thumbnail?.path || '', item.thumbnail?.extension || '')"
       (onSelectItem)="onSelectItem($event)"
     ></app-search-item>
-    <app-search-loading *ngIf="loading"></app-search-loading>
   </div>
   <div *ngIf="total === 0 && !firstRequest" class="search__not-found">
     <h5>No results for {{ searchValue }}</h5>

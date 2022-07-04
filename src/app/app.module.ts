@@ -13,7 +13,6 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 import { CharactersComponent } from './page/characters/characters.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
-import { SearchLoadingComponent } from './components/loadings/search-loading/search-loading.component';
 import { ProfileHeaderComponent } from './components/profile-header/profile-header.component';
 import { OptionsMenuComponent } from './components/options-menu/options-menu.component';
 import { MediaCardComponent } from './components/media-card/media-card.component';
@@ -31,7 +30,6 @@ import { MediaCardComponent } from './components/media-card/media-card.component
     CharactersComponent,
     SearchItemComponent,
     DropdownComponent,
-    SearchLoadingComponent,
     ProfileHeaderComponent,
     OptionsMenuComponent,
     MediaCardComponent

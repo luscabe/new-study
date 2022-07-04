@@ -4,7 +4,7 @@ import { IOptions } from 'src/app/utils/Interfaces/IOptions';
 @Component({
   selector: 'app-options-menu',
   templateUrl: './options-menu.component.html',
-  styleUrls: ['./options-menu.component.scss']
+  styleUrls: ['./options-menu.component.sass']
 })
 export class OptionsMenuComponent {
   @Input() options: Array<IOptions> = [];
